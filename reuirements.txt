@@ -1,0 +1,11 @@
+opencv-python
+numpy
+imutils
+optional:-
+        matplotlib
+        jupyter
+
+if you want to install requirements
+1)Go to cmd and type pip install opencv 
+                     pip install numpy
+                     pip install imutilis
