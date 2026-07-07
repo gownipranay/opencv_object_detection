@@ -1,53 +1,108 @@
-# opencv_object_detection
-Model Information
+# OpenCV Object Detection
 
-This project uses the MobileNetSSD (Single Shot MultiBox Detector) model trained on the COCO dataset.
-You need two model files (place them in the same folder as your Python script):
+A real-time object detection application built with Python and OpenCV. It uses a
+pre-trained MobileNet-SSD deep learning model to detect and label everyday objects
+(people, vehicles, animals, furniture, etc.) live from your webcam feed, drawing
+bounding boxes and confidence scores directly on the video.
 
-MobileNetSSD_deploy.prototxt
+## Features
 
-MobileNetSSD_deploy.caffemodel
+- Real-time object detection from a live webcam feed
+- Detects 20 common object classes (see below)
+- Draws bounding boxes, labels, and confidence scores on screen
+- Save any frame as a snapshot with a single keypress
+- Lightweight — runs on CPU using OpenCV's DNN module (no GPU required)
 
-You can download them from trusted sources such as:
+## Model Information
 
-Hugging Face Model File
+This project uses **MobileNet-SSD** (Single Shot MultiBox Detector), a lightweight
+deep learning model trained on the COCO dataset for fast object detection.
 
-Kaggle Dataset
+The model can detect the following 20 object classes:
 
-Run the Project
+`aeroplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, diningtable,
+dog, horse, motorbike, person, pottedplant, sheep, sofa, train, tvmonitor`
 
-Run the following command in your terminal:
+You need two model files, placed in the same folder as `webcam_object_detect.py`:
 
+- `MobileNetSSD_deploy.prototxt` — the model architecture definition
+- `MobileNetSSD_deploy.caffemodel` — the pre-trained model weights
+
+These files are not included in this repository. Download them from a trusted
+source such as Hugging Face or Kaggle and place them in the project root.
+
+## Project Structure
+
+```
+opencv_object_detection/
+├── webcam_object_detect.py   # Main script: captures webcam feed and runs detection
+├── reuirements.txt           # Python dependencies
+└── README.md
+```
+
+## Requirements
+
+- Python 3.x
+- A webcam
+
+Dependencies (listed in `reuirements.txt`):
+
+- `opencv-python`
+- `numpy`
+- `imutils`
+
+Optional (for experimentation/analysis):
+
+- `matplotlib`
+- `jupyter`
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/gownipranay/opencv_object_detection.git
+   cd opencv_object_detection
+   ```
+2. Install the dependencies:
+   ```
+   pip install opencv-python numpy imutils
+   ```
+3. Download `MobileNetSSD_deploy.prototxt` and `MobileNetSSD_deploy.caffemodel`
+   and place them in the project root.
+
+## Usage
+
+Run the script from the project root:
+
+```
 python webcam_object_detect.py
+```
 
+If everything is set up correctly, your webcam will open and detected objects
+will be labeled in real-time with bounding boxes.
 
-If everything is set up correctly:
+### Controls
 
-Your webcam will open.
+| Key | Action                              |
+|-----|--------------------------------------|
+| `q` | Quit the webcam window               |
+| `s` | Save the current frame as `snapshot_X.jpg` |
 
-Objects in front of the camera will be detected and labeled in real-time.
+## How It Works
 
-Controls
-Key	Action
-q	Quit webcam
-s	Save current frame as snapshot_X.jpg
-How It Works
+1. The webcam feed is read frame-by-frame using OpenCV.
+2. Each frame is resized and converted into a blob, then passed through the
+   MobileNet-SSD network via OpenCV's DNN module.
+3. Detections above a confidence threshold (50%) are kept.
+4. Bounding boxes and class labels with confidence scores are drawn on the frame.
+5. The annotated frame is displayed in a live window until the user quits.
 
-The webcam feed is read using OpenCV.
+## Future Enhancements
 
-Each frame is passed through MobileNetSSD using OpenCV’s DNN module.
+- Integrate YOLOv8 or DETR for higher detection accuracy
+- Deploy as a web dashboard using Streamlit
+- Add text-to-speech alerts for specific detected objects
 
-Detected objects are labeled with confidence scores.
+## Author
 
-The frame is displayed in real-time with bounding boxes drawn.
-
-Future Enhancements
-
-Integrate YOLOv8 or DETR for higher accuracy
-
-Deploy on a web dashboard using Streamlit
-
-Add text-to-speech alerts for specific objects
-
-
-GOWNI PRANAY-BTech(CSE-AIML)
+GOWNI PRANAY — B.Tech (CSE-AIML)
