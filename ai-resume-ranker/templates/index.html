@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AI Resume Ranker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>AI Resume Ranker</h1>
+    <p class="subtitle">Match and rank resumes against a job description using NLP.</p>
+
+    {% if error %}
+      <div class="alert">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data" class="upload-form">
+      <label>Job description (upload a file)</label>
+      <input type="file" name="job_description" accept=".txt,.pdf,.docx">
+
+      <label>...or paste the job description text</label>
+      <textarea name="job_description_text" rows="6" placeholder="Paste job description here"></textarea>
+
+      <label>Resumes (select multiple, .txt/.pdf/.docx)</label>
+      <input type="file" name="resumes" accept=".txt,.pdf,.docx" multiple required>
+
+      <button type="submit">Rank Resumes</button>
+    </form>
+
+    {% if results %}
+      <h2>Results</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Resume</th>
+            <th>Match Score</th>
+            <th>Text Similarity</th>
+            <th>Skill Coverage</th>
+            <th>Matched Skills</th>
+            <th>Missing Skills</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in results %}
+          <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ r.name }}</td>
+            <td class="score">{{ r.score }}%</td>
+            <td>{{ r.text_similarity }}%</td>
+            <td>{{ r.skill_score }}%</td>
+            <td>{{ r.matched_skills | join(', ') }}</td>
+            <td class="missing">{{ r.missing_skills | join(', ') }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+  </div>
+</body>
+</html>

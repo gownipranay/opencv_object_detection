@@ -1,0 +1,22 @@
+Job Title: Machine Learning Engineer
+
+We are looking for a Machine Learning Engineer to join our data team. You will
+design, train, and deploy machine learning and deep learning models for
+production use cases, including NLP and computer vision.
+
+Requirements:
+- Strong proficiency in Python
+- Experience with machine learning and deep learning frameworks such as
+  TensorFlow, PyTorch, or Keras
+- Experience with NLP and libraries like spaCy or Hugging Face Transformers
+- Familiarity with scikit-learn, pandas, and numpy
+- Experience building and consuming REST APIs (Flask or FastAPI)
+- Experience with SQL and relational databases such as PostgreSQL
+- Familiarity with Docker and cloud platforms (AWS or GCP)
+- Experience with Git and CI/CD workflows
+- Strong communication skills and ability to work in an Agile team
+
+Nice to have:
+- Experience with computer vision (OpenCV)
+- Experience with Kubernetes
+- Experience with data engineering tools like Airflow or Spark

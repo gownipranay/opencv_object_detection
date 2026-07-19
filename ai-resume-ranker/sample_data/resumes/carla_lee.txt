@@ -1,0 +1,17 @@
+Carla Lee
+Data Scientist
+
+Summary:
+Data scientist with 3 years of experience in Python, pandas, numpy, and
+scikit-learn. Built statistical models and dashboards using SQL, Tableau,
+and Power BI. Some exposure to machine learning and deep learning with
+TensorFlow. Familiar with Docker and basic AWS usage.
+
+Skills: Python, pandas, numpy, scikit-learn, SQL, statistics, machine
+learning, deep learning, TensorFlow, Docker, AWS, Tableau, Power BI,
+communication, problem solving.
+
+Experience:
+- Built predictive models for churn analysis using scikit-learn.
+- Created dashboards in Tableau and Power BI for business stakeholders.
+- Assisted in deploying models with Docker on AWS.

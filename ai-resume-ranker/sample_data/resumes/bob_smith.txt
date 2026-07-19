@@ -1,0 +1,15 @@
+Bob Smith
+Frontend Developer
+
+Summary:
+Frontend developer with 4 years of experience building web applications
+using JavaScript, TypeScript, React, and CSS. Some exposure to Node.js and
+REST APIs. Familiar with Git and Agile workflows.
+
+Skills: JavaScript, TypeScript, React, HTML, CSS, Node.js, REST API, Git,
+Agile, teamwork.
+
+Experience:
+- Built responsive web interfaces with React and TypeScript.
+- Integrated REST APIs into single-page applications.
+- Worked in an Agile team using Git for version control.

@@ -1,0 +1,70 @@
+body {
+  font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #f5f6fa;
+  color: #1d1d1f;
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+h1 { margin-bottom: 0.2rem; }
+.subtitle { color: #6e6e73; margin-top: 0; }
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 1.5rem 0;
+}
+
+.upload-form label { font-weight: 600; margin-top: 0.8rem; }
+.upload-form textarea, .upload-form input[type="file"] {
+  padding: 0.5rem;
+  border: 1px solid #d2d2d7;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.4rem;
+  background: #2f6fed;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+}
+button:hover { background: #2559c7; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+th, td {
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 0.92rem;
+}
+th { background: #f0f2f7; }
+.score { font-weight: 700; color: #2f6fed; }
+.missing { color: #c0392b; }
+
+.alert {
+  background: #fdecea;
+  color: #c0392b;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}

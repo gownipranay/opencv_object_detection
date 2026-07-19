@@ -1,0 +1,18 @@
+Alice Johnson
+Machine Learning Engineer
+
+Summary:
+Machine learning engineer with 5 years of experience building deep learning
+and NLP systems in Python. Skilled in PyTorch, TensorFlow, Hugging Face
+Transformers, and spaCy. Experience deploying models behind REST APIs using
+Flask, and working with PostgreSQL, Docker, and AWS. Comfortable with Git,
+CI/CD, and Agile teams.
+
+Skills: Python, PyTorch, TensorFlow, Keras, NLP, Hugging Face, spaCy,
+scikit-learn, pandas, numpy, Flask, REST API, SQL, PostgreSQL, Docker, AWS,
+Git, CI/CD, Agile, communication.
+
+Experience:
+- Built an NLP pipeline for document classification using Transformers.
+- Deployed ML models as microservices with Flask and Docker on AWS.
+- Collaborated with cross-functional teams in an Agile environment.
