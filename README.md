@@ -49,5 +49,15 @@ Deploy on a web dashboard using Streamlit
 
 Add text-to-speech alerts for specific objects
 
+## Jarvis: a rule-based phone assistant
+
+This repo also includes `jarvis/`, an offline, rule-based "Jarvis"-style
+assistant you can run on your phone (via Termux) or on a PC. It understands
+commands like time/date, calculator, notes, reminders/timers, device
+control (battery, flashlight, calls, SMS), opening apps/websites, and "what
+do you see" (which reuses the MobileNetSSD detector above through your
+camera). No API keys, no cloud services, no ML for its command
+understanding — just regular expressions and Python. See
+[`jarvis/README.md`](jarvis/README.md) for setup and the full command list.
 
 GOWNI PRANAY-BTech(CSE-AIML)
