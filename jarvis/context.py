@@ -19,3 +19,4 @@ class Context:
     storage: Storage
     speak: Callable[[str], None]
     stop_event: StopEvent = field(default_factory=StopEvent)
+    chat_history: list = field(default_factory=list)

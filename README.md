@@ -49,15 +49,16 @@ Deploy on a web dashboard using Streamlit
 
 Add text-to-speech alerts for specific objects
 
-## Jarvis: a rule-based phone assistant
+## Jarvis: a phone assistant (rule-based actions + free NVIDIA AI chat)
 
-This repo also includes `jarvis/`, an offline, rule-based "Jarvis"-style
-assistant you can run on your phone (via Termux) or on a PC. It understands
-commands like time/date, calculator, notes, reminders/timers, device
-control (battery, flashlight, calls, SMS), opening apps/websites, and "what
-do you see" (which reuses the MobileNetSSD detector above through your
-camera). No API keys, no cloud services, no ML for its command
-understanding — just regular expressions and Python. See
-[`jarvis/README.md`](jarvis/README.md) for setup and the full command list.
+This repo also includes `jarvis/`, a "Jarvis"-style assistant you can run
+on your phone (via Termux) or on a PC. Phone actions — time/date,
+calculator, notes, reminders/timers, device control (battery, flashlight,
+calls, SMS), opening apps/websites, and "what do you see" (which reuses
+the MobileNetSSD detector above through your camera) — run on a local
+rule engine with no API key needed. Anything else (real questions,
+conversation, help writing something) is answered by a real language
+model over NVIDIA's free NIM API. See [`jarvis/README.md`](jarvis/README.md)
+for setup, how to add your API key safely, and the full command list.
 
 GOWNI PRANAY-BTech(CSE-AIML)

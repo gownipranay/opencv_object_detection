@@ -53,4 +53,4 @@ def test_identity(tmp_path):
     engine = make_engine()
     ctx = make_ctx(tmp_path)
     response = engine.handle("who are you", ctx)
-    assert "rule-based" in response.lower()
+    assert "jarvis" in response.lower()

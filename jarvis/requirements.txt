@@ -1,0 +1,4 @@
+requests
+
+# opencv-python and numpy (already in the repo's top-level reuirements.txt)
+# are needed too, for the "what do you see" camera skill.

@@ -1,14 +1,16 @@
 """Entry point: `python -m jarvis` (or `python jarvis/main.py`).
 
-Everything here is local and offline: a regex rule engine (jarvis/engine.py),
-a JSON file for memory (jarvis/storage.py), and a handful of skill modules
-under jarvis/skills/. No API keys are read, required, or used anywhere in
-this project.
+Phone actions (calls, texts, flashlight, notes, timers, ...) are handled by
+a local regex rule engine (jarvis/engine.py) with JSON-file memory
+(jarvis/storage.py) -- fully offline, no API key needed for any of that.
+Anything else falls through to the free NVIDIA API for real conversation
+(jarvis/llm_client.py), only if NVIDIA_API_KEY is set; see jarvis/README.md.
 """
 from __future__ import annotations
 
 import argparse
 
+from . import llm_client
 from .context import Context
 from .engine import Engine
 from .io_backend import listen, speak
@@ -17,10 +19,20 @@ from .storage import Storage
 from .skills.reminders import start_scheduler
 
 BANNER = (
-    "Jarvis (rule-based, offline) is ready.\n"
+    "Jarvis is ready.\n"
     "Try: 'what time is it', 'take a note buy milk', 'set a timer for 5 minutes',\n"
-    "'what do you see', 'battery status', or 'help'. Say 'exit' to quit."
+    "'what do you see', 'battery status', 'help' -- or just ask a question.\n"
+    "Say 'exit' to quit."
 )
+
+
+def _status_line() -> str:
+    if llm_client.is_configured():
+        return f"AI chat: ON ({llm_client.model_name()}, via NVIDIA API)."
+    return (
+        "AI chat: OFF (no NVIDIA_API_KEY set -- built-in commands still work). "
+        "See jarvis/README.md to enable free-form conversation."
+    )
 
 
 def build_engine() -> Engine:
@@ -40,6 +52,7 @@ def run(voice: bool = False) -> None:
     start_scheduler(ctx)
 
     print(BANNER)
+    print(_status_line())
     while not ctx.stop_event.requested:
         text = listen(voice=voice)
         if not text:
@@ -49,7 +62,9 @@ def run(voice: bool = False) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Jarvis: a rule-based, offline phone assistant.")
+    parser = argparse.ArgumentParser(
+        description="Jarvis: rule-based phone control plus free-form AI chat via the NVIDIA API."
+    )
     parser.add_argument(
         "--voice",
         action="store_true",

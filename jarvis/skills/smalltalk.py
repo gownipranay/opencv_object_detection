@@ -10,9 +10,10 @@ GREETINGS = [
 ]
 
 IDENTITY = (
-    "I'm Jarvis, a rule-based assistant. I run entirely on your device, "
-    "match what you say against a list of patterns, and run a matching "
-    "skill. No cloud, no API keys, no machine learning."
+    "I'm Jarvis. Phone actions like calls, texts, notes, and timers run "
+    "entirely on your device through rule-based commands, no API key "
+    "needed. For open-ended questions I use the free NVIDIA AI API, if "
+    "you've set one up. Say 'ai status' to check."
 )
 
 
